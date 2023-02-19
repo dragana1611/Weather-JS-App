@@ -26,11 +26,10 @@ const APIKey = "a0aca8a89948154a4182dcecc780b513";
 
 function displayWeather(event) {
   event.preventDefault();
+
   if (searchCity.value.trim() !== "") {
     city = searchCity.value.trim();
     currentWeather(city);
-  } else {
-    searchCity.value("Enter city");
   }
 }
 
@@ -76,7 +75,7 @@ function currentWeather(city) {
 
     if (response.cod == 200) {
       sCity = JSON.parse(localStorage.getItem("cityname"));
-      console.log(sCity);
+
       if (sCity == null) {
         sCity = [];
         sCity.push(city.toUpperCase());
@@ -160,7 +159,6 @@ function invokePastSearch(event) {
 }
 
 function loadlastCity() {
-  $("ul").empty();
   let sCity = JSON.parse(localStorage.getItem("cityname"));
   if (sCity !== null) {
     sCity = JSON.parse(localStorage.getItem("cityname"));
@@ -175,7 +173,7 @@ function loadlastCity() {
 //Clear the search city
 function clearCity(event) {
   event.preventDefault();
-  $("#search-city").val("");
+  searchCity.value = "";
 }
 
 //Clear the search history
@@ -188,7 +186,7 @@ function clearHistory(event) {
 
 //Click Handlers
 searchButton.addEventListener("click", displayWeather);
-searchCity.addEventListener('change', displayWeather)
+searchCity.addEventListener("change", displayWeather);
 document.addEventListener("click", invokePastSearch);
 window.addEventListener("load", loadlastCity);
 clearSearchButton.addEventListener("click", clearCity);
