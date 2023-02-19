@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./images/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather Dashboard</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      class="jumbotron container-fluid mt-2 text-center p-2"
+      style="background-color: transparent; color: white"
+    >
+      <h1><strong>Weather Dashboard</strong></h1>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-4 bg-light rounded align-items-center">
+          <h4 class="mt-4 mb-3 pt-1 justify-content-center">
+            <strong>Search for a City:</strong>
+          </h4>
+
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="search-city"
+              placeholder="Enter city"
+              aria-label="City Search"
+              aria-describedby="search-button"
+            />
+            <div class="input-group-append">
+              <button class="btn bg-primary text-light" id="search-button">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+
+          <center>
+            <div>
+              <button
+                class="btn btn-primary mb-2"
+                type="button"
+                id="clear-search"
+              >
+                Clear search
+              </button>
+              <button
+                class="btn btn-primary mb-2"
+                type="button"
+                id="clear-history"
+              >
+                Clear history
+              </button>
+            </div>
+          </center>
+          <ul class="list-group"></ul>
+        </div>
+        <div class="col-sm-8">
+          <div class="row ml-2 border border-dark rounded align-items-center">
+            <div class="col-12 col-sm-12" id="current-weather">
+              <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
+              <div class="row justify-content-center">
+                <p
+                  class="col-lg-5 col-sm-12 text-light"
+                  style="font-size: 24px"
+                >
+                  Temperature:
+                  <span
+                    class="current"
+                    id="temperature"
+                    style="font-weight: bold"
+                  ></span>
+                </p>
+                <p class="col-lg-7 col-sm-12 text-light">
+                  Humidity: <span class="current" id="humidity"></span>
+                </p>
+                <p class="col-lg-5 col-sm-12 text-light">
+                  Wind Speed: <span class="current" id="wind-speed"></span>
+                </p>
+                <p class="col-lg-7 col-sm-12 text-light">
+                  Atmospheric pressure:
+                  <span class="current" id="pressure"></span>
+                </p>
+                <p class="col-lg-6 col-sm-12 text-light">
+                  UV index:
+                  <span
+                    class="current bg-danger rounded py-2 px-2 text-white"
+                    id="uv-index"
+                  ></span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12" id="future-weather">
+            <h3 class="mb-3 mt-4 text-center">5-Day Forecast</h3>
+
+            <div class="row text-light justify-content-center">
+              <div
+                class="col-m-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded"
+              >
+                <p id="fDate0"></p>
+                <p id="fImg0"></p>
+                <p>Temp: <span id="fTemp0"></span></p>
+                <p>Humidity: <span id="fHumidity0"></span></p>
+              </div>
+              <div
+                class="col-m-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded"
+              >
+                <p id="fDate1"></p>
+                <p id="fImg1"></p>
+                <p>Temp: <span id="fTemp1"></span></p>
+                <p>Humidity: <span id="fHumidity1"></span></p>
+              </div>
+              <div
+                class="col-m-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded"
+              >
+                <p id="fDate2"></p>
+                <p id="fImg2"></p>
+                <p>Temp: <span id="fTemp2"></span></p>
+                <p>Humidity: <span id="fHumidity2"></span></p>
+              </div>
+              <div
+                class="col-m-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded"
+              >
+                <p id="fDate3"></p>
+                <p id="fImg3"></p>
+                <p>Temp: <span id="fTemp3"></span></p>
+                <p>Humidity: <span id="fHumidity3"></span></p>
+              </div>
+              <div
+                class="col-m-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded"
+              >
+                <p id="fDate4"></p>
+                <p id="fImg4"></p>
+                <p>Temp: <span id="fTemp4"></span></p>
+                <p>Humidity: <span id="fHumidity4"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
