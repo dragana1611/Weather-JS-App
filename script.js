@@ -188,6 +188,7 @@ function clearHistory(event) {
 
 //Click Handlers
 searchButton.addEventListener("click", displayWeather);
+searchCity.addEventListener('change', displayWeather)
 document.addEventListener("click", invokePastSearch);
 window.addEventListener("load", loadlastCity);
 clearSearchButton.addEventListener("click", clearCity);
